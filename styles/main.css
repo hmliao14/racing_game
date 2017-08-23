@@ -3,23 +3,54 @@ h1{
 	background-color: gray;
 }
 
-.track {
+.board {
+	width: 1000px;
+	height: 200px;
+	border:  2px solid black;
+	
+}
+
+
+.track{
+	display: inline-block;
+	width: 480px;
+	height: 1500px;
+	padding-bottom: 100px;
+	margin-left: 10px;
+	top: -1200px;
+
+}
+
+.track_one{
+	border: 2px solid red;
+	position: absolute;
+	float: left;
+}
+
+.track_two{
+	border: 2px solid green;
+	position: absolute;
+	float: right;
+	left: 500px;
+}
+/*.track_two{
 	display: inline-block;
 	float: left;
-	bottom: 0;
+	top: 0;
 	width: 40%;
-	height: 400px;
+	height: 800px;
 	border: 2px solid;
 	margin-left: 40px;
-}
+	position: sticky;
+	bottom: 0;
+}*/
 
 .car {
 	width: 50px;
 	height: 50px;
 	background: teal;
 	border-radius: 25px;
-	position: absolute;
-/*	top: ;
-	left: 45%;*/
+	position: fixed;
 	bottom: 0;
+
 }
