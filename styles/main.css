@@ -14,22 +14,26 @@ h1{
 .track{
 	display: inline-block;
 	width: 480px;
-	height: 1500px;
+	
+	/*3700 height last 15 secs~*/
+	height: 7400px;
 	padding-bottom: 100px;
 	margin-left: 10px;
-	top: -1200px;
+	/* top should be -500 from height*/
+	top: -6900px;
+
 
 }
 
 .track_one{
 	border: 2px solid red;
-	position: absolute;
+	/*position: absolute;*/
 	float: left;
 }
 
 .track_two{
 	border: 2px solid green;
-	position: absolute;
+	/*position: absolute;*/
 	float: right;
 	left: 500px;
 }

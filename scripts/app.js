@@ -8,10 +8,18 @@ $(document).ready(function(){
 	var t1 = $("#t1");
 	var t2 = $("#t2");
 
-	// t1.animate({
-	// 	// track starts
-	// 	"margin-top": "+=30px"
-	// }, 100);
+	// var intervalID = window.setInterval(race, 5);
+	function race(){
+		t1.animate({
+			// track starts
+			"margin-top": "+=4px"
+		},5,"swing");
+	}
+	// var margin = 
+
+	function newRace() {
+
+	}
 
 	// Keypad A.S for P1 
 	$(document).on("keydown", function(e){
@@ -51,35 +59,35 @@ $(document).ready(function(){
 		/*
 			##### PLAYER 2 #####
 		*/
-		if(e.which === 75){
-			// Pressed 'k' to move left
-			p2.animate({
-				"margin-left": "-=30px"
+		// if(e.which === 75){
+		// 	// Pressed 'k' to move left
+		// 	p2.animate({
+		// 		"margin-left": "-=30px"
 
-			}, 100);
-		} else if(e.which === 76){
-			// Pressed 'l' to move left
-			p2.animate({
-				"margin-left": "+=30px"
+		// 	}, 100);
+		// } else if(e.which === 76){
+		// 	// Pressed 'l' to move left
+		// 	p2.animate({
+		// 		"margin-left": "+=30px"
 
-			}, 100);
-		}
+		// 	}, 100);
+		// }
 
-		if(e.which === 219){
-			// Pressed '[' speed up
-			t2.animate({
-				"margin-top": "+=30px"
+		// if(e.which === 219){
+		// 	// Pressed '[' speed up
+		// 	t2.animate({
+		// 		"margin-top": "+=30px"
 
-			}, 100);
-		} else if(e.which === 221){
-			// Pressed ']' to shoot
-			// coming soon..
-			t2.animate({
-				"margin-top": "-=30px"
+		// 	}, 100);
+		// } else if(e.which === 221){
+		// 	// Pressed ']' to shoot
+		// 	// coming soon..
+		// 	t2.animate({
+		// 		"margin-top": "-=30px"
 
-			}, 100);
+		// 	}, 100);
 
-		}
+		// }
 
 
 
