@@ -7,17 +7,44 @@ $(document).ready(function(){
 	var p2 = $("#p2");
 	var t1 = $("#t1");
 	var t2 = $("#t2");
+	var obs = $(".obstacle");
 
-	// var intervalID = window.setInterval(race, 5);
+	  // var intervalID = window.setInterval(race, 5);
 	function race(){
 		t1.animate({
+			// track starts. Plus will make it go down
+			"margin-top": "+=4px"
+		},5,"swing");
+		obs.animate({
 			// track starts
 			"margin-top": "+=4px"
 		},5,"swing");
+
 	}
 	// var margin = 
+	generateObs();
 
-	function newRace() {
+	function generateObs() {
+		var height = $(".track_one").height();
+		var section = Math.floor(height/6);
+		var $board = $('.board');
+		var distance = section;
+
+
+ 		for(var i=0; i<6; i ++){
+
+			// create new obs and append it at the location
+			// base on the board's height
+			$board.append(`<div class="obstacle" id="${i}"></div`);
+				// distance = distance + i;
+			$(`#${i}`).animate({
+				"margin-top": `+=${distance}`
+
+			});
+			distance = distance + section;
+
+		}
+
 
 	}
 
