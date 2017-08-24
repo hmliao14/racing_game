@@ -134,7 +134,7 @@ $(document).ready(function(){
 	// Keypad A.S for P1 
 	var intervalID = setInterval(toAlert, 1000);
 	function toAlert(){
-		alert("Please play on fullscreen if you arent. Player press a to move up. Player 2 press k to move up");
+		alert("Please play on fullscreen if you arent. Player 1 press a to move up. Player 2 press k to move up");
 		clearInterval(intervalID);
 	}
 	
