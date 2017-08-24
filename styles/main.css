@@ -1,5 +1,9 @@
 
 h1{
+	background-color: green;
+}
+
+body{
 	background-color: gray;
 }
 
@@ -10,51 +14,85 @@ h1{
 	
 }
 
+.obstacle {
+	width: 100px;
+	height: 100px;
+	background: red;
+	padding: 0;
+	margin: 0;
+	/*Need position absoulte
+	and top relatively subtracted from top as
+	the track class
+	*/
+	/*/###############*/
+	position: absolute;
+	/*top: -1000px;*/
+
+	top: -300px;
+	left: 100px;
+}
+
 
 .track{
 	display: inline-block;
 	width: 480px;
+	background-image: url('../imgs/track.jpg');
+	background-size: 480px;
 	
 	/*3700 height last 15 secs~*/
-	height: 7400px;
+	/*3700 to 7400*/
+	height: 2000px;
 	padding-bottom: 100px;
 	margin-left: 10px;
 	/* top should be -500 from height*/
-	top: -6900px;
+	/*3200 to 6900*/
 
+	/*/###############*/
+	top: -1000px;
+}
+.end {
+	width: 480px;
+	height: 50px;
+	background-image: url("../imgs/finish_line.png");
+	position: absolute;
+	top: -1000px;
+	z-index: 1000;
 
 }
 
 .track_one{
+	/* need position absolute to flow*/
+	/*/###############*/
+	position: absolute;
+	/*/*/
 	border: 2px solid red;
-	/*position: absolute;*/
 	float: left;
 }
 
 .track_two{
 	border: 2px solid green;
-	/*position: absolute;*/
+	position: absolute;
 	float: right;
 	left: 500px;
 }
-/*.track_two{
-	display: inline-block;
-	float: left;
-	top: 0;
-	width: 40%;
-	height: 800px;
-	border: 2px solid;
-	margin-left: 40px;
-	position: sticky;
-	bottom: 0;
-}*/
 
+
+#p1 {
+	background-image: url('../imgs/car1.png');
+	background-size: 50px 50px;
+}
+
+#p2 {
+	background-image: url('../imgs/car3.jpg');
+	background-size: 50px 50px;
+}
 .car {
 	width: 50px;
 	height: 50px;
 	background: teal;
-	border-radius: 25px;
 	position: fixed;
 	bottom: 0;
+	margin-left: 225px;
+	z-index: 2000;
 
 }
