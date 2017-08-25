@@ -6,10 +6,7 @@ $(document).ready(function(){
 	// All of these arent being used...
 	// Please scroll all the way down to key event handling section for core code.
 	// Everything in between are commented out for in progres...
-	var p1 = $("#p1");
-	var p2 = $("#p2");
-	var t1 = $("#t1");
-	var t2 = $("#t2");
+
 	// var obsDiv = $(".obstacle");
 	var y = [];
 	var x = [];
@@ -19,6 +16,7 @@ $(document).ready(function(){
 	var test = 0;
 	var $obs = $('.obstacle');
 
+	// PLEASE SKIP ALL UNTIL YOU SEE ######### THATS WHERE IT BEGINS
 	// Below code doesnt come into play in the rollback version...
 	//generateObs(30);
 	// var intervalID = window.setInterval(race, 1000);
@@ -127,14 +125,24 @@ $(document).ready(function(){
 	// 	}
 	// } // End of generateObs
 
-	//###################### Workable version here
+	//##########################################################
+	//###################### Workable version here #############
+	// p1_y and p2_y are counters that keep track how far the 
+	// players have move up the screen, and that is used to
+	// to determine the winner
+	var p1 = $("#p1");
+	var p2 = $("#p2");
+	var t1 = $("#t1");
+	var t2 = $("#t2");
+	var end_one = $("#end1");
+	var end_two = $("#end2");
 	var p1_y =1950;
 	var p2_y = 1950;
 	var gameEnd = false;
-	// Keypad A.S for P1 
+	// Just an initial alert to tell how its being played
 	var intervalID = setInterval(toAlert, 500);
 	function toAlert(){
-		alert("Please play on fullscreen if you arent. Player press a to move up. Player 2 press k to move up");
+		alert("Player Red press 'a' to move up. Player Green press 'k' to move up");
 		clearInterval(intervalID);
 	}
 	
@@ -150,13 +158,14 @@ $(document).ready(function(){
 				"margin-top": "+=30px",
 				
 			}, 1, function(){
-
-				p1_y = p1_y - 30;
-				if(p1_y<50) {
-					alert("P1 Wins");
-					gameEnd = true;
+				end_one.animate({
+					"margin-top": "+=30px",
+				}, 1);
+				if(end_one.offset().top > p1.offset().top) {
+					alert("Player Red Wins");
 				}
 			});
+
 		} 
 
 		if(e.which === 75){
@@ -165,11 +174,12 @@ $(document).ready(function(){
 				"margin-top": "+=30px"
 
 			}, 1, function() {
-				p2_y = p2_y - 30;
-				if(p2_y<50) {
-					alert("P2 Wins");
-					gameEnd = true;
+				end_two.animate({
+					"margin-top": "+=30px",
 					
+				}, 1);
+				if(end_two.offset().top > p2.offset().top) {
+					alert("Player Green Wins");
 				}
 
 			});
