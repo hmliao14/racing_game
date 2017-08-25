@@ -150,9 +150,9 @@ $(document).ready(function(){
 		/*
 			##### PLAYER 1 #####
 		*/
-
-		if(gameEnd) return;
+		if(gameEnd) return;		
 		if(e.which === 65){
+			
 			// Pressed 'a' to move up
 			t1.animate({
 				"margin-top": "+=30px",
@@ -163,12 +163,14 @@ $(document).ready(function(){
 				}, 1);
 				if(end_one.offset().top > p1.offset().top) {
 					alert("Player Red Wins");
+					gameEnd = true;
 				}
 			});
 
 		} 
 
 		if(e.which === 75){
+			
 			// Pressed 'k' for p2 to move up
 			t2.animate({
 				"margin-top": "+=30px"
@@ -180,6 +182,7 @@ $(document).ready(function(){
 				}, 1);
 				if(end_two.offset().top > p2.offset().top) {
 					alert("Player Green Wins");
+					gameEnd = true;
 				}
 
 			});
